@@ -1,0 +1,26 @@
+# This is a boilerplate parameters config generated for pipeline 'score_pipeline'
+# using Kedro 0.18.7.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://docs.kedro.org/en/0.18.7/kedro_project_setup/configuration.html#parameters
+data_options_score:
+  cat_name: ['Краска для волос'] #[['Шампуни','Лечение волос','Бальзамы и кондиционеры']]  #,['Шампуни','Лечение волос','Бальзамы и кондиционеры'],['Шампуни','Лечение волос','Бальзамы и кондиционеры'],['Краска для волос']] #['Полуфабрикаты из мяса птицы охлажденные', 'Мясо курицы охлажденное'] #Краска для волос
+  cat_level: 2
+  brand_col: 'art_grp_2_lvl_1_name' #'PRDX_T_ARTGRP2LVL1NAME'
+  brand_name: [['Garnier Color Naturals','Колор Нэчралс']] #[['Оливия','Эльсэв']] #'Garnier Color Naturals 'Комильфо'
+  begin_dt: '2023-06-14' #20230224
+  begin_dt1: '2023-08-14' #20230424
+  end_dt: '2023-09-14' #20230518
+  calc_dt: '2023-09-14'
+  site_formats: [ 'МД','БФ','МК' ]
+  customer_table: " ( SELECT contact_id FROM cvm_sbx.ch_color_nat_sc_sept )"
+  cat_levels: [1,0]
+  description: 'Color Naturals скоринг'
+  output_table_name: "cvm_sbx.mt_lookalike_kat_color_nut_scores" # обязательно lowercase
+  #"DS.LOOKALIKE_CUST_SCORES_INDILITE_SCORING"
+  # Mode to define outliers
+  def_outliers_by: "iqr" # default or iqr
+  # Statistics for outliers
+  outlier_statistics: ['enrollment_days','rto_1m','avg_daily_bill_1m']
+  # Minimum days of enrollment
+  min_enrollment: 60

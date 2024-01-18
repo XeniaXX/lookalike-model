@@ -1,0 +1,53 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+train_data:
+  type: pickle.PickleDataSet
+  filepath: data/05_model_input/train_data.pickle
+  versioned: true
+
+target:
+  type: pickle.PickleDataSet
+  filepath: data/05_model_input/target.pickle
+  versioned: true
+
+score_data:
+  type: pickle.PickleDataSet
+  filepath: data/05_model_input/score_data.pickle
+  versioned: true
+
+score_data_filtered:
+  type: pickle.PickleDataSet
+  filepath: data/05_model_input/score_data_filtered.pickle
+  versioned: true
+
+predictions:
+  type: pickle.PickleDataSet
+  filepath: data/07_model_output/predictions.pickle
+  versioned: true
+
+cross_val_scores:
+  type: pickle.PickleDataSet
+  filepath: data/07_model_output/cross_val_scores.pickle
+  versioned: true
+
+customers:
+  type: pickle.PickleDataSet
+  filepath: data/07_model_output/customers.pickle
+  versioned: true
+
+clfs:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/clf.pickle
+  versioned: true
+
+calib_clfs:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/calib_clf.pickle
+  versioned: true
+
+output_table:
+  type: pickle.PickleDataSet
+  filepath: data/07_model_output/output_table.pickle
+  versioned: true

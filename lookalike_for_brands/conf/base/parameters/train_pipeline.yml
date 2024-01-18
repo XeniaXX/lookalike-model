@@ -1,0 +1,39 @@
+# This is a boilerplate parameters config generated for pipeline 'train_pipeline'
+# using Kedro 0.18.7.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://docs.kedro.org/en/0.18.7/kedro_project_setup/configuration.html#parameters
+data_options_train:
+  begin_cus_dt: '2023-06-12'
+  end_cus_dt: '2023-09-12'
+  site_format: False
+  #cat_name: [ 'Влажные корма для кошек и котят', ]
+  cat_name: [['Шампуни','Лечение волос','Бальзамы и кондиционеры'],['Краска для волос']]  #['Краска для воло]] #,['Шампуни','Лечение волос','Бальзамы и кондиционеры'],['Шампуни','Лечение волос','Бальзамы и кондиционеры'],['Краска для волос']]
+  #['Шоколад плиточный','Шоколадные конфеты в коробках','Шоколадные конфеты в коробках']
+  #['Шоколад плиточный']
+  #['Шоколад плиточный'] #['Соки и нектары'] #'Полуфабрикаты мясные охлажденные','Свинина охлажденная'
+  #['Тампоны','Краска для волос']
+  #['Полуфабрикаты из мяса птицы охлажденные', 'Мясо индейки охлажденное']
+  #['Полуфабрикаты мясные охлажденные']
+  #['Декоративная косметика']
+  #['Для лица','Для глаз','Для губ','Для бровей'] #['Полуфабрикаты мясные охлажденные']
+  cat_level: 2
+  brand_col: 'art_grp_2_lvl_1_name' #'PRDX_T_ARTGRP2LVL0NAME'
+  #brand_name: [ 'Gourmet' ] #'ЧМПЗ ОАО'
+  brand_name: [['Эльсэв','Олия'],['Garnier Color Naturals','Колор Нэчралс']] #,['Глисс Кур'],['Эльсэв','Олия'],['Color Naturals','Колор Нэчралс']] #[['Россия', 'Россия щедрая душа']]
+  #[['Россия', 'Россия щедрая душа']] #['Я'] #['Ola!','Garnier Color Naturals'] #['Индилайт','Индилайт']#'Splat','Splat'] #['Gourmet']
+  dist_col: 'art_grp_2_lvl_2_name'
+  dist_name: [False]
+  dist_flag: False
+  begin_dt: '2023-06-12' #20230224
+  begin_dt1: '2023-08-12' #20230424
+  end_dt: '2023-09-12' #20230518
+  calc_dt: '2023-09-13'
+  site_formats: ['МД','БФ','МК'] #['МД','БФ','МК','ПР']
+  cat_levels: [1,0] #[22,21,20] #[cat_level-i for i in [0,1,2,3] if cat_level-i>=20]
+  threshold_variable: 'rto_brand' #'RTO_CAT_RATIO' #'RTO_CAT_BRAND_RATIO'
+  threshold_percentile: 30
+  description: 'greenplum test' #'клиенты для Индилайт(оценка аудитории)'
+  output_table_name: "cvm_sbx.mt_lookalike_kat_russia"    # обязательно lowercase
+  
+#path_to_save_score: data/08_reporting/path_to_save_score.parquet
